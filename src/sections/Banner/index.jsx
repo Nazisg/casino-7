@@ -17,7 +17,7 @@ export default function Banner() {
                         We've done the hard work of reviewing and ranking the world's best online casinos.
                         Play with confidence, claim the biggest bonuses, and win big.
                     </p>
-                    <a href="#top-casinos">
+                    <a href="/top-casinos">
                         <button className="bg-[#34611C] mt-3 text-white border cursor-pointer border-[#34611C] shadow-[0_0_5px_#34611C,0_0_10px_#34611C,0_0_20px_#34611C] rounded-[10px] py-3 font-bold px-6">
                             Claim Exclusive Bonus
                         </button>

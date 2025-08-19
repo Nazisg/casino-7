@@ -1,46 +1,49 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Auto-close sidebar when the route changes
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <>
       {/* HEADER */}
       <header className="fixed top-0 left-0 w-full bg-[#020008] z-50 shadow-lg">
-        <nav className="relative max-w-7xl mx-auto flex items-center justify-between py-5 px-6">
+        <nav className="relative max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             className="text-xl font-bold text-white cursor-pointer flex gap-2 items-center"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
           >
             <img src="/icons/casino-logo.png" alt="logo" className="w-8" />
-            <h2 className="text-[#34611C] glow-text">Casino</h2>
-          </a>
+            <h2 className="glow-text">CASINO</h2>
+          </Link>
+
           {/* Desktop Nav */}
-          <ul className="absolute left-1/2 -translate-x-1/2 hidden md:flex space-x-8 text-white">
-            <li><a href="#top-casinos" className="hover:text-[#34611C] duration-300">Top Casinos</a></li>
-            <li><a href="#about-us" className="hover:text-[#34611C] duration-300">About Us</a></li>
-            <li><a href="#terms" className="hover:text-[#34611C] duration-300">Terms & Conditions</a></li>
+          <ul className=" hidden lg:flex space-x-8 font-bold text-white">
+            <li><Link href="/top-casinos" className="hover:text-[#34611C]">Top Casinos</Link></li>
+            <li><Link href="/about-us" className="hover:text-[#34611C]">About Us</Link></li>
+            <li><Link href="/terms" className="hover:text-[#34611C]">Terms & Conditions</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-[#34611C]">Privacy Policy</Link></li>
+            <li><Link href="/responsible-gaming" className="hover:text-[#34611C]">Responsible Gaming</Link></li>
           </ul>
 
           {/* Burger / X button for mobile */}
-          <button className="md:hidden z-50 cursor-pointer" onClick={() => setOpen(!open)}>
+          <button
+            className="lg:hidden z-50 cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
             {open ? (
-              <img
-                src="/icons/close.png"
-                alt="close"
-                className="w-4 h-4"
-              />
+              <img src="/icons/close.png" alt="close" className="w-4 h-4" />
             ) : (
-              <img
-                src="/icons/burger-menu.svg"
-                alt="burger-menu"
-              />
+              <img src="/icons/burger-menu.svg" alt="burger-menu" />
             )}
           </button>
         </nav>
@@ -48,26 +51,16 @@ export default function Header() {
 
       {/* SIDE MENU */}
       <div
-        className={`fixed z-40 top-0 right-0 h-full w-64 bg-[#020008] text-white p-6 transform transition-transform duration-300 shadow-lg ${open ? "translate-x-0" : "translate-x-full"
-          }`}
+        className={`fixed z-40 top-0 right-0 h-full w-64 bg-[#020008] text-white p-6 transform transition-transform duration-300 shadow-lg ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        {/* Menu Items */}
         <ul className="mt-12 space-y-4 font-bold">
-          <li>
-            <a href="#top-casinos" onClick={() => setOpen(false)}>
-              Top Casinos
-            </a>
-          </li>
-          <li>
-            <a href="#about-us" onClick={() => setOpen(false)}>
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="#terms" onClick={() => setOpen(false)}>
-              Terms & Conditions
-            </a>
-          </li>
+          <li><Link href="/top-casinos">Top Casinos</Link></li>
+          <li><Link href="/about-us">About Us</Link></li>
+          <li><Link href="/terms">Terms & Conditions</Link></li>
+          <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+          <li><Link href="/responsible-gaming">Responsible Gaming</Link></li>
         </ul>
       </div>
     </>

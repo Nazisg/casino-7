@@ -20,14 +20,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h2 className="text-[#34611C] font-semibold mb-4">Quick Links</h2>
             <div className="space-y-2">
-              <a href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }} className="block text-gray-400 hover:text-[#60023] transition-colors text-sm">Home</a>
-              <a href="#about-us" className="block text-gray-400 hover:text-[#34611C] transition-colors text-sm">About Us</a>
-              <a href="#top-casinos" className="block text-gray-400 hover:text-[#34611C] transition-colors text-sm">Top Casinos</a>
-              <a href="#terms" className="block text-gray-400 hover:text-[#34611C] transition-colors text-sm">Terms & Conditions</a>
+              <a href="/"
+                className="block text-gray-400 hover:text-[#60023] transition-colors text-sm">Home</a>
+              <a href="/about-us" className="block text-gray-400 hover:text-[#34611C] transition-colors text-sm">About Us</a>
+              <a href="/top-casinos" className="block text-gray-400 hover:text-[#34611C] transition-colors text-sm">Top Casinos</a>
+              <a href="/terms" className="block text-gray-400 hover:text-[#34611C] transition-colors text-sm">Terms & Conditions</a>
             </div>
           </div>
 
@@ -35,7 +32,7 @@ export default function Footer() {
             <h2 className="text-[#34611C] font-semibold mb-4">Support</h2>
             <div className="space-y-2 text-gray-400 text-sm">
               <p>24/7 Customer Support</p>
-              <p>Email: support@top10royalcasino.co.uk</p>
+              <p>Email: casino.co.uk</p>
               <p>Live Chat Available</p>
             </div>
           </div>
