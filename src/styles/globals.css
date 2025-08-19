@@ -23,9 +23,6 @@ body {
   height: 8px;
 }
 
-.gold {
-  color: #DDA435;
-}
 
 /* Track */
 ::-webkit-scrollbar-track {
@@ -35,14 +32,14 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #e60023;
+  background: #34611C;
   border-radius: 10px;
-  border: 1px solid #e60023;
+  border: 1px solid #34611C;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff3251f6;
+  background: #3ea804;
   transition-duration: 0.3s;
 }
 
